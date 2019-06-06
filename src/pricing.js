@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
 
-function Pricing(order, priceDetails) {
+function Pricing (order, priceDetails) {
   this.order = order
   this.priceDetails = priceDetails
   this.products = priceDetails.prices
@@ -15,15 +15,15 @@ function Pricing(order, priceDetails) {
   }
 }
 
-Pricing.prototype.createReceipt = function() {
+Pricing.prototype.createReceipt = function () {
   var receipt = this.receipt
   var products = this.products
   var vatRates = this.vatRates
   var basketCost = 0
   var basketVat = 0
-  this.items.forEach(function(item) {
+  this.items.forEach(function (item) {
     var receiptItem = item
-    products.forEach(function(product) {
+    products.forEach(function (product) {
       if (item.product_id === product.product_id) {
         receiptItem.price = product.price * item.quantity
         receiptItem.vat = Math.round(
@@ -40,37 +40,37 @@ Pricing.prototype.createReceipt = function() {
   this.totalCostWithVat()
 }
 
-Pricing.prototype.calculateCostAndVat = function(cost, vat) {
+Pricing.prototype.calculateCostAndVat = function (cost, vat) {
   this.cost += cost
   this.vat += Math.round(vat)
 }
 
-Pricing.prototype.totalCostWithVat = function() {
+Pricing.prototype.totalCostWithVat = function () {
   this.receipt.total += this.cost + this.vat
 }
 
-Pricing.prototype.convertCurrency = function(currency) {
+Pricing.prototype.convertCurrency = function (currency) {
   var domain = 'https://free.currconv.com/api/v7/'
   var conversion = `convert?q=GBP_${currency}`
   var compact = '&compact=ultra'
   var api = '&apiKey=a179f97a2c6c58238742'
   var url = domain + conversion + compact + api
-  console.log(url)
 
   var request = new XMLHttpRequest()
-
   request.open('GET', url, true)
-
+  // console.log(request)
   request.onload = function () {
-    var data = JSON.parse(this.response)
-    console.log(data)
-
+    console.log(request)
     if (request.status >= 200 && request.status < 400) {
-      console.log(data)
+      var data = JSON.parse(request)
+      data.forEach(exchange => {
+        console.log(exhange)
+      })
     } else {
       console.log('error')
     }
   }
+  // request.onload()
   request.send()
 }
 

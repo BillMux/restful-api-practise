@@ -1,6 +1,6 @@
 # Tails.com Pricing Service
 
-A hypothetical version of the Tails.com internal pricing service. This RESTful API should accept requests in the form of an order, containing a list of items and their quantities, and return individual prices and VATs of each item, and the total cost, VAT included.
+A hypothetical version of an internal pricing service for an online shopping platform. This RESTful API should accept requests in the form of an order, containing a list of items and their quantities, and return individual prices and VATs of each item, and the total cost, VAT included.
 
 #### Tech:
 - JavaScript (Node v11.9.0)

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Pricing" errors="0" tests="4" failures="0" time="0.031" timestamp="2019-06-17T14:44:43">
+  <testcase classname="Pricing" name="can access order info" time="0.004"></testcase>
+  <testcase classname="Pricing" name="can access pricing info" time="0"></testcase>
+  <testcase classname="Pricing" name="initializes with cost at zero" time="0"></testcase>
+  <testcase classname="Pricing" name="has access to full details of all items in basket" time="0"></testcase>
+</testsuite>
+<testsuite name="Pricing.#createReceipt" errors="0" tests="2" failures="0" time="0.001" timestamp="2019-06-17T14:44:43">
+  <testcase classname="Pricing.#createReceipt" name="adds up the cost of all items in basket" time="0"></testcase>
+  <testcase classname="Pricing.#createReceipt" name="calculates price and VAT for each item" time="0"></testcase>
+</testsuite>
+<testsuite name="Pricing.#convertCurrency" errors="0" tests="1" failures="1" time="0.024" timestamp="2019-06-17T14:44:43">
+  <testcase classname="Pricing.#convertCurrency" name="can convert currency to USD" time="0.024"><failure type="expect" message="Expected 2219 to equal 2819.">Error: Expected 2219 to equal 2819.
+    at new jasmine.ExpectationResult (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:114:32)
+    at matchersClass.toEqual (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1316:29)
+    at jasmine.Spec.&amp;lt;anonymous&amp;gt; (/Users/williammuxworthy/Projects/restful-api-practise/spec/pricingSpec.js:62:37)
+    at jasmine.Block.execute (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:1145:17)
+    at jasmine.Queue.next_ (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at jasmine.Queue.start (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2130:8)
+    at jasmine.Spec.execute (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2458:14)
+    at jasmine.Queue.next_ (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2177:31)
+    at jasmine.Queue.start (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2130:8)
+    at jasmine.Suite.execute (/Users/williammuxworthy/Projects/restful-api-practise/node_modules/jasmine-node/lib/jasmine-node/jasmine-1.3.1.js:2604:14)</failure></testcase>
+</testsuite>
+</testsuites>
